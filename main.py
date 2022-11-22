@@ -4,6 +4,7 @@ def iterative_factorial(n):
         fact *= i
         return fact
 
+
 print(iterative_factorial(5))
 
 
@@ -15,6 +16,7 @@ def recur_factorial(n):
         temp = temp * n
         return temp
 
+
 print(recur_factorial(5))
 
 
@@ -23,6 +25,7 @@ def recur_factorial(n):
         return n
     else:
         return n * recur_factorial(n - 1)
+
 
 print(recur_factorial(5))
 
@@ -34,8 +37,31 @@ def permute(string, pocket=""):
         for i in range(len(string)):
             letter = string[i]
             front = string[0:i]
-            back = string[i+1:]
+            back = string[i + 1 :]
             together = front + back
             permute(together, letter + pocket)
 
+
 print(permute("ABC", ""))
+
+
+from math import factorial
+def permutations(str):
+    for p in range(factorial(len(str))):
+        print("".join(str))
+        i = len(str) - 1
+        while i > 0 and str[i - 1] > str[i]:
+            i -= 1
+            str[i:] = reversed(str[i:])
+            if i > 0:
+                q = 1
+                while str[i - 1] > str[q]:
+                    q += 1
+                    temp = str[i - 1]
+                    str[i - 1] = str[q]
+                    str[q] = temp
+
+
+s = "abc"
+s = list(s)
+permutations(s)
