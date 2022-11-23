@@ -46,6 +46,8 @@ print(permute("ABC", ""))
 
 
 from math import factorial
+
+
 def permutations(str):
     for p in range(factorial(len(str))):
         print("".join(str))
@@ -65,3 +67,14 @@ def permutations(str):
 s = "abc"
 s = list(s)
 permutations(s)
+
+
+def search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+
+
+arr = [2, 5, 8, 9, 10, 16, 22]
+target = 10
+print(search(arr, target))
