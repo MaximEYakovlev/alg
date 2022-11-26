@@ -117,6 +117,17 @@ def binary_recur(arr, start, end, target):
         return -1
 
 
-arr=[2, 5, 8, 10, 16, 22, 25]
-target=10
-result=binary_recur(arr, 0, len(arr)-1, target)
+arr = [2, 5, 8, 10, 16, 22, 25]
+target = 10
+result = binary_recur(arr, 0, len(arr)-1, target)
+
+
+# bubble sorting
+def bubbleSorting(array):
+    iterationsNumber = 0
+    for i in range(len(array)):
+        for j in range(len(array)-i-1):
+            iterationsNumber += 1
+            if array[j] > arr[j+1]:
+                array[j], array[j+1] = array[j+1], array[j]
+                return array, iterationsNumber
