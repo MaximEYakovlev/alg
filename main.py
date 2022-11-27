@@ -131,3 +131,10 @@ def bubbleSorting(array):
             if array[j] > arr[j+1]:
                 array[j], array[j+1] = array[j+1], array[j]
                 return array, iterationsNumber
+
+
+# bubble sorting (alternative)
+def swap(array, i, j):
+    temp = array[i]
+    array[i] = array[j]
+    array[j] = temp
