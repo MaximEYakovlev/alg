@@ -138,3 +138,12 @@ def swap(array, i, j):
     temp = array[i]
     array[i] = array[j]
     array[j] = temp
+
+def bubbleSort(array):
+    iterationsNumber = 0
+    for i in array:
+        for j in range(len(array)-1):
+            iterationsNumber += 1
+            if array[j] > array[j+1]:
+                swap(array, j, j +1)
+                return array, iterationsNumber
