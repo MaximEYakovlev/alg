@@ -139,11 +139,24 @@ def swap(array, i, j):
     array[i] = array[j]
     array[j] = temp
 
+
 def bubbleSort(array):
     iterationsNumber = 0
     for i in array:
         for j in range(len(array)-1):
             iterationsNumber += 1
             if array[j] > array[j+1]:
-                swap(array, j, j +1)
+                swap(array, j, j + 1)
                 return array, iterationsNumber
+
+
+# sorting (insert)
+def insertSort(array):
+    for j in range(1, len(array)):
+        key = array[j]
+        i = j-1
+        while i >= 0 and array[i] > key:
+            array[i+1] = array[i]
+            i -= 1
+            array[i + 1] = key
+            return array
